@@ -1,4 +1,4 @@
-let totalAmount = 0;
+ let totalAmount = 0;
 let srNoCounter = 1;
 
 function addItem() {
@@ -47,10 +47,5 @@ function calculateBalance() {
 }
 
 function printBill() {
-    const billDetails = document.getElementById('bill-details').innerHTML;
-    const originalContents = document.body.innerHTML;
-    document.body.innerHTML = billDetails;
     window.print();
-    document.body.innerHTML = originalContents;
-    window.location.reload();
 }
