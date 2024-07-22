@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form id="bill-form">
+            <div class="form-group">
+                <label for="product-name">Product:</label>
+                <input type="text" id="product-name" required>
+            </div>
+            <div class="form-group">
+                <label for="sq-feet-length">Sq Feet Length:</label>
+                <input type="number" id="sq-feet-length">
+            </div>
+            <div class="form-group">
+                <label for="sq-feet-width">Sq Feet Width:</label>
+                <input type="number" id="sq-feet-width">
+            </div>
+            <div class="form-group">
+                <label for="rate">Rate (₹):</label>
+                <input type="number" id="rate" required>
+            </div>
+            <div class="form-group">
+                <label for="paid-amount">Paid Amount (₹):</label>
+                <input type="number" id="paid-amount" oninput="calculateBalance()">
+            </div>
+            <button type="button" onclick="addItem()">Add Item</button>
+        </form>
+
+        <div id="bill-details">
+            <div class="logo">
+                <img src="logo.jpg" alt="Logo">
+            </div>
+            
+            <table id="bill-table">
+                <thead>
+                    <tr>
+                        <th>Sr No</th>
+                        <th>Product</th>
+                        <th>Sq Feet Length</th>
+                        <th>Sq Feet Width</th>
+                        <th>Total Sq Feet</th>
+                        <th>Rate (₹)</th>
+                        <th>Total Amount (₹)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+            <h3>Total Amount: ₹<span id="total-amount">0.00</span></h3>
+            <h3>Paid Amount: ₹<span id="display-paid-amount">0.00</span></h3>
+            <h3>Remaining Balance: ₹<span id="remaining-amount">0.00</span></h3>
+        </div>
+
+        <button id="print-button" onclick="printBill()">Print Bill</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
